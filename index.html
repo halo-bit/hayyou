@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for someone 🎂</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Countdown Screen */
+#countdownBox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ff758c;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:35px;
+z-index:9999;
+}
+
+/* Judul */
+h1{
+    margin-top:60px;
+    font-size:55px;
+}
+
+/* Pesan */
+.message{
+    width:70%;
+    margin:auto;
+    font-size:22px;
+    line-height:1.6;
+}
+
+/* Kue */
+.cake{
+    font-size:120px;
+    margin-top:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cake:hover{
+    transform:scale(1.1);
+}
+
+/* Tombol */
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    color:#ff4d79;
+    cursor:pointer;
+    margin-top:25px;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* Galeri */
+.gallery img{
+    width:200px;
+    border-radius:15px;
+    margin:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* Confetti */
+.confetti{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:white;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{transform:translateY(-100vh);}
+    to{transform:translateY(100vh);}
+}
+/* BALON LOVE */
+
+.balloon{
+position:absolute;
+bottom:-100px;
+font-size:40px;
+animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- COUNTDOWN SCREEN -->
+
+<div id="countdownBox">
+
+<h1>🎁 Surprise Sedang Disiapkan</h1>
+
+<p>Halaman akan terbuka saat hari ulang tahun 🎂</p>
+
+<div id="countdownTimer"></div>
+
+</div>
+
+<!-- WEBSITE UTAMA -->
+
+<h1>🎉 Selamat Ulang Tahun Sayangkuu! 🎂</h1>
+
+<p class="message">
+Semoga di hari spesial ini kamu selalu diberikan kesehatan,
+kebahagiaan, dan semua impianmu bisa tercapai.  
+Terima kasih sudah menjadi orang yang luar biasa dalam hidupku. ✨
+</p>
+
+<div class="cake" onclick="blowCandle()">
+🎂
+</div>
+
+<p>Buka pesan lalu tiup lilinnya 🎂</p>
+
+<button onclick="showMessage()">Buka Pesan Spesial 💌</button>
+
+<br><br>
+
+<div class="gallery">
+<h2>Ini Kamu yang Imupp 📸</h2>
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+
+</div>
+
+<button onclick="playMusic()">Play Music 🎵</button>
+
+<audio id="bgmusic" loop>
+<source src="JVKE - her (official lyric video) - JVKE.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* ======================
+   TANGGAL ULANG TAHUN
+   UBAH DI SINI
+====================== */
+
+let birthday = new Date("2026-03-24 00:00:00").getTime();
+
+/* COUNTDOWN */
+
+let countdownFunction = setInterval(function(){
+
+let now = new Date().getTime();
+let distance = birthday - now;
+
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdownTimer").innerHTML =
+days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+
+if(distance < 0){
+
+clearInterval(countdownFunction);
+
+document.getElementById("countdownBox").style.display="none";
+
+}
+
+},1000);
+
+/* musik */
+
+function playMusic(){
+let music=document.getElementById("bgmusic");
+music.play();
+}
+
+/* pesan spesial */
+
+function showMessage(){
+alert(`🎉 Selamat Ulang Tahun, Bu Bos yang Paling Berisik!
+
+Selamat ulang tahun, Sayang. Hari ini adalah hari di mana dunia harus berterima kasih karena telah menghadirkan satu manusia paling unik, paling ajaib, dan paling menggemaskan sepertimu. Saat aku menulis ini, aku sambil tersenyum membayangkan wajahmu yang mungkin sedang cemberut, atau mungkin sedang asyik mengunyah jajanan favoritmu tanpa peduli dunia sekitar.
+
+Aku ingin jujur padamu. Menghadapi kamu itu terkadang rasanya seperti naik roller coaster tanpa sabuk pengaman. Sifat kekanak-kanakanmu itu sering kali membuatku geleng-geleng kepala. Kamu bisa merajuk hanya karena hal sepele, atau tiba-tiba manja minta perhatian di saat yang paling tidak terduga. Ditambah lagi dengan mood-mu yang bisa berubah lebih cepat daripada pergantian musim; detik ini kamu tertawa bahagia, detik berikutnya kamu bisa diam seribu bahasa hanya karena aku telat membalas pesanmu sepuluh menit. Tapi, tahukah kamu? Justru ketidakpastian itulah yang membuat hari-hariku tidak pernah membosankan. Aku belajar untuk menjadi lebih sabar, lebih peka, dan lebih kuat untuk menjadi sandaranmu.
+
+Lalu, ada sisi cerewetmu. Kadang aku berpikir, dari mana datangnya semua energi itu? Kamu bisa menceritakan hal yang sama berulang kali, mengomentari apa saja yang kita lihat di jalan, atau sekadar memprotes hal-hal kecil dengan nada bicaramu yang khas. Tapi sejujurnya, saat suasana hening, aku justru merindukan suaramu. Rumah dan hatiku terasa sepi tanpa celotehanmu yang memenuhi udara. Jangan pernah berhenti bicara ya,... lanjutannya ada di kue 🎂`);
+}
+
+/* confetti */
+
+for(let i=0;i<120;i++){
+let confetti=document.createElement("div");
+confetti.className="confetti";
+confetti.style.left=Math.random()*100+"vw";
+confetti.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(confetti);
+}
+/* BALON LOVE */
+
+function createBalloon(){
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+
+balloon.innerHTML="💖";
+
+balloon.style.left=Math.random()*100+"vw";
+
+balloon.style.animationDuration=(6+Math.random()*5)+"s";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>{
+balloon.remove();
+},11000);
+
+}
+
+setInterval(createBalloon,800);
+/* tiup lilin */
+
+function blowCandle(){
+alert("✨ 💖💖💖 ...karena setiap kata yang keluar dari mulutmu adalah melodi yang paling aku sukai. Lopeee lopee 💖💖💖 ✨");
+}
+
+</script>
+
+</body>
+</html>
