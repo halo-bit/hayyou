@@ -276,7 +276,26 @@ setInterval(createBalloon,800);
 function blowCandle(){
 alert("✨ 💖💖💖 ...karena setiap kata yang keluar dari mulutmu adalah melodi yang paling aku sukai. Lopeee lopee 💖💖💖 ✨");
 }
+/* SLIDE GALERI */
 
+let slides = document.querySelectorAll(".gallery img");
+let index = 0;
+
+function showSlide(){
+slides.forEach((img)=>{
+img.classList.remove("active");
+});
+
+slides[index].classList.add("active");
+
+index++;
+if(index >= slides.length){
+index = 0;
+}
+}
+
+showSlide();
+setInterval(showSlide,3000);
 </script>
 
 </body>
