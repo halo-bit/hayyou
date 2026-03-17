@@ -191,7 +191,15 @@ Terima kasih sudah menjadi orang yang luar biasa dalam hidupku. ✨
 <img src="k.jpeg">
 <img src="l.jpeg">
 <img src="m.jpeg">
-
+<img src="n.jpeg">
+<img src="o.jpeg">
+<img src="p.jpeg">
+<img src="q.jpeg">
+<img src="r.jpeg">
+<img src="s.jpeg">
+<img src="t.jpeg">
+<img src="u.jpeg">
+<img src="v.jpeg">
     
 </div>
 
@@ -262,6 +270,27 @@ confetti.style.left=Math.random()*100+"vw";
 confetti.style.animationDuration=(3+Math.random()*5)+"s";
 document.body.appendChild(confetti);
 }
+function createBalloon(){
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+
+balloon.innerHTML="💙🎀";
+
+balloon.style.left=Math.random()*100+"vw";
+
+balloon.style.animationDuration=(6+Math.random()*5)+"s";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>{
+balloon.remove();
+},11000);
+
+}
+
+setInterval(createBalloon,800);
 /* BALON LOVE */
 
 function createBalloon(){
