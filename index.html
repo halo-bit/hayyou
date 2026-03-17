@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>for someone 🎂</title>
 
 <style>
@@ -96,7 +97,7 @@ button:hover{
 }
 
 .gallery img:hover{
-    transform:scale(1.1);
+    transform:translateX(-50%) scale(1.1);
 }
 
 /* Confetti */
@@ -130,6 +131,43 @@ opacity:1;
 transform:translateY(-120vh);
 opacity:0;
 }
+}
+/* RESPONSIVE HP */
+
+@media (max-width:600px){
+
+h1{
+font-size:32px;
+margin-top:30px;
+}
+
+.message{
+width:90%;
+font-size:18px;
+}
+
+.cake{
+font-size:90px;
+}
+
+button{
+font-size:16px;
+padding:10px 20px;
+}
+
+.gallery{
+height:240px;
+}
+
+.gallery img{
+width:160px;
+}
+
+#countdownBox{
+font-size:24px;
+padding:20px;
+}
+
 }
 </style>
 
