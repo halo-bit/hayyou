@@ -75,11 +75,24 @@ button:hover{
 }
 
 /* Galeri */
+.gallery{
+    position:relative;
+    height:220px;
+}
+
 .gallery img{
     width:200px;
     border-radius:15px;
     margin:10px;
-    transition:0.3s;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    opacity:0;
+    transition:opacity 1s;
+}
+
+.gallery img.active{
+    opacity:1;
 }
 
 .gallery img:hover{
